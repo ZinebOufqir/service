@@ -1,13 +1,15 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: hello-knative
+  name: hello
   namespace: kube-controllers
 spec:
   template:
     spec:
       containers:
-      - image: docker.io/berndinox/hello-knative
-        env:
-        - name: TARGET
-          value: "Knative"
+        - image: gcr.io/knative-samples/helloworld-go
+          ports:
+            - containerPort: 8080
+          env:
+            - name: TARGET
+              value: "World"
