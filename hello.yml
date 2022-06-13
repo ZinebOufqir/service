@@ -2,7 +2,7 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: hello
-  namespace: kube-controllers
+  namespace: tenant-sandbox-gravitee
 spec:
   template:
     spec:
