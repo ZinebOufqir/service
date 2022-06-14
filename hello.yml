@@ -5,6 +5,9 @@ metadata:
   namespace: tenant-sandbox-gravitee
 spec:
   template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/min-scale: "2"
     spec:
       containers:
         - image: gcr.io/knative-samples/helloworld-go
